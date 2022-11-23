@@ -1,0 +1,173 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.480278,
+          35.892778
+        ]
+      },
+      "properties": {
+        "name": "剣ヶ峰",
+        "type": "top"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.511389,
+          35.9
+        ]
+      },
+      "properties": {
+        "name": "飯森高原駅",
+        "type": "station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.508889,
+          35.897222
+        ]
+      },
+      "properties": {
+        "name": "行場山荘",
+        "type": "hut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.498333,
+          35.895
+        ]
+      },
+      "properties": {
+        "name": "女人堂",
+        "type": "hut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.487778,
+          35.895
+        ]
+      },
+      "properties": {
+        "name": "石室山荘",
+        "type": "hut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.481944,
+          35.8975
+        ]
+      },
+      "properties": {
+        "name": "二ノ池山荘",
+        "type": "hut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.476667,
+          35.904722
+        ]
+      },
+      "properties": {
+        "name": "摩利支天山",
+        "type": "top"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.485556,
+          35.906667
+        ]
+      },
+      "properties": {
+        "name": "三ノ池",
+        "type": "pond"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.486389,
+          35.916944
+        ]
+      },
+      "properties": {
+        "name": "継子岳",
+        "type": "top"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.465,
+          35.8925
+        ]
+      },
+      "properties": {
+        "name": "継母岳",
+        "type": "top"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.481667,
+          35.901944
+        ]
+      },
+      "properties": {
+        "name": "賽ノ河原",
+        "type": "field"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.483611,
+          35.909444
+        ]
+      },
+      "properties": {
+        "name": "五ノ池小屋",
+        "type": "hut"
+      }
+    }
+  ]
+}
