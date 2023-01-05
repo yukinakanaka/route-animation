@@ -157,11 +157,13 @@ const addPin = (map, firstPosition) => {
 
 const add3D = (map) => {
     // Add some fog in the background
-    map.setFog({
-        range: [0, 2],
-        color: "white",
-        "horizon-blend": 0.2,
-    });
+    if (config.style.fog) {
+        map.setFog({
+            range: [0, 2],
+            color: "white",
+            "horizon-blend": 0.2,
+        });
+    }
 
     // Add a sky layer over the horizon
     map.addLayer({
@@ -207,6 +209,7 @@ const addFeatures = (map, featuresGeojson) => {
             "text-size": config.style.featureTextSize,
             "text-field": ["get", "name"],
             "text-offset": [0, 0.5],
+            "text-variable-anchor": config.style.textVariableAnchor,
         },
         paint: {
             "text-halo-color": "hsla(321, 0%, 13%, 0.8)",
@@ -228,9 +231,8 @@ const playAnimations = async (map, routeGeojson) => {
                 : config.zoomInView.bearing - config.rotation.rotateDegree,
             padding: config.finalView.padding,
         });
-        setTimeout(() => {
-            resolve();
-        }, config.videoSpeed.finalViewDurationSec * 1000 * 1.5);
+        await map.once("moveend");
+        resolve();
     });
 };
 
@@ -269,11 +271,11 @@ async function main() {
     // initialize map
     const map = await new mapboxgl.Map({
         container: "map",
-        zoom: 4,
+        zoom: config.globalView.zoomLevel,
         center: turf.center(routeGeojson).geometry.coordinates,
         pitch: 0,
         bearing: 0,
-        style: "mapbox://styles/mapbox/satellite-streets-v12",
+        style: config.style.mapStyle,
         interactive: true,
         hash: false,
         fadeDuration: 0,

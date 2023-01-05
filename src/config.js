@@ -24,11 +24,14 @@ const config = {
         padding: 100,
     },
     style: {
+        mapStyle: "mapbox://styles/mapbox/satellite-streets-v12",
         terrainExaggeration: 1.5,
         pinImage: "./img/pin.png",
         routeBackgroundColor: "orange",
         routeColor: "orange",
         featureTextSize: 10,
+        fog: true,
+        textVariableAnchor: new Array("bottom"),
     },
     videoEncorder: {
         fps: 30,
