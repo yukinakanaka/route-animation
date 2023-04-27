@@ -1,5 +1,4 @@
 import loadEncoder from "https://unpkg.com/mp4-h264@1.0.7/build/mp4-encoder.js";
-import { simd } from "https://unpkg.com/wasm-feature-detect?module";
 import { config } from "./config.js";
 mapboxgl.accessToken = config.accessToken;
 
@@ -237,7 +236,7 @@ const playAnimations = async (map, routeGeojson) => {
 };
 
 const initEncoder = async () => {
-    const supportsSIMD = await simd();
+    const supportsSIMD = await wasmFeatureDetect.simd();
     const Encoder = await loadEncoder({ simd: supportsSIMD });
     const gl = map.painter.context.gl;
     const width = gl.drawingBufferWidth;
@@ -283,14 +282,13 @@ async function main() {
     window.map = map;
     await map.once("load");
 
-    // add Layers
-    add3D(map);
-    addRoute(map, routeGeojson);
-    addFeatures(map, featuresGeojson);
-    addPin(map, routeGeojson.features[0].geometry.coordinates[0]);
-
     if (config.record) {
         const [encoder, encodeFrame] = await initEncoder();
+        // add Layers
+        add3D(map);
+        addRoute(map, routeGeojson);
+        addFeatures(map, featuresGeojson);
+        addPin(map, routeGeojson.features[0].geometry.coordinates[0]);
 
         mapboxgl.setNow();
         map.on("render", encodeFrame);
@@ -307,6 +305,11 @@ async function main() {
         anchor.download = config.videoEncorder.fileName;
         anchor.click();
     } else {
+        // add Layers
+        add3D(map);
+        addRoute(map, routeGeojson);
+        addFeatures(map, featuresGeojson);
+        addPin(map, routeGeojson.features[0].geometry.coordinates[0]);
         await playAnimations(map, routeGeojson);
     }
 }
